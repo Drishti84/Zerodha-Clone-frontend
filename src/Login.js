@@ -44,6 +44,7 @@ const Login = () => {
           const { success, message } = data;
           if (success) {
             handleSuccess(message);
+            document.cookie = "isLoggedIn=true; path=/; max-age=604800; SameSite=Lax";
             setTimeout(() => {
               navigate("/");
             }, 1000);

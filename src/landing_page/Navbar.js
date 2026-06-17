@@ -7,12 +7,12 @@ function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const match = document.cookie.match(/(?:^|;\s*)token=([^;]*)/);
+    const match = document.cookie.match(/(?:^|;\s*)isLoggedIn=([^;]*)/);
     setIsLoggedIn(!!(match && match[1]));
   }, [location]);
 
   const handleLogout = () => {
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
+    document.cookie = "isLoggedIn=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
     setIsLoggedIn(false);
     navigate("/");
   };

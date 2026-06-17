@@ -6,7 +6,7 @@ function Hero() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        const match = document.cookie.match(/(?:^|;\s*)token=([^;]*)/);
+        const match = document.cookie.match(/(?:^|;\s*)isLoggedIn=([^;]*)/);
         setIsLoggedIn(!!(match && match[1]));
     }, []);
 

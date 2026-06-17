@@ -42,9 +42,9 @@ const Signup = () => {
       );
       const { success, message } = data;
       if (success) {
-        console.log("success");
         handleSuccess(message);
-          navigate("/");
+        document.cookie = "isLoggedIn=true; path=/; max-age=604800; SameSite=Lax";
+        navigate("/");
       } else {
         handleError(message);
       }
