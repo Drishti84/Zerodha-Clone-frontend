@@ -44,11 +44,8 @@ const Login = () => {
           const { success, message } = data;
           if (success) {
             handleSuccess(message);
-            const dashboardURL = process.env.NODE_ENV === "production"
-              ? "https://zerodha-clone-dashboard-312i.onrender.com"
-              : "http://localhost:3001";
             setTimeout(() => {
-              window.location.href = dashboardURL;
+              navigate("/");
             }, 1000);
 
           } else {
