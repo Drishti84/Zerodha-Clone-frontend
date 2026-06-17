@@ -57,7 +57,7 @@ function Navbar() {
                 )}
                 {isLoggedIn && (
                   <li class="nav-item">
-                    <a class="nav-link active" href="http://localhost:3001">Dashboard</a>
+                    <a class="nav-link active" href={process.env.NODE_ENV === "production" ? "https://zerodha-clone-dashboard-312i.onrender.com" : "http://localhost:3001"}>Dashboard</a>
                   </li>
                 )}
                 {isLoggedIn && (

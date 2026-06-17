@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import BACKEND_URL from "./config";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Login = () => {
         console.log("Form submitted");
         try {
           const { data } = await axios.post(
-            "http://localhost:3002/login",
+            `${BACKEND_URL}/login`,
             {
               ...inputValue,
             },
@@ -42,10 +43,12 @@ const Login = () => {
           console.log(data);
           const { success, message } = data;
           if (success) {
-            console.log("success");
             handleSuccess(message);
+            const dashboardURL = process.env.NODE_ENV === "production"
+              ? "https://zerodha-clone-dashboard-312i.onrender.com"
+              : "http://localhost:3001";
             setTimeout(() => {
-              navigate("/");
+              window.location.href = dashboardURL;
             }, 1000);
 
           } else {
