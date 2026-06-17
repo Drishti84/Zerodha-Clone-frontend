@@ -53,8 +53,8 @@ const Login = () => {
             handleError(message);
           }
         } catch (error) {
-          console.log(error);
-        } 
+          handleError("Unable to connect to server. Please try again.");
+        }
         setInputValue({
             ...inputValue,
             email: "",
