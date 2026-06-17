@@ -42,3 +42,86 @@ code {
   border-radius: 10px;
   border: none;
 }
+
+.form_container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form_container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgb(56, 126, 209);
+  font-weight: 600;
+}
+
+.form_container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_container form > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form_container label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form_container input {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form_container input:focus {
+  border-color: rgb(56, 126, 209);
+}
+
+.form_container button[type="submit"] {
+  padding: 12px;
+  margin-top: 10px;
+  background-color: rgb(56, 126, 209);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form_container button[type="submit"]:hover {
+  background-color: rgb(40, 100, 175);
+}
+
+.form_container span {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+.form_container span a {
+  color: rgb(56, 126, 209);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.form_container span a:hover {
+  text-decoration: underline;
+}

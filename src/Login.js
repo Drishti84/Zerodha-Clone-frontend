@@ -44,8 +44,10 @@ const Login = () => {
           if (success) {
             console.log("success");
             handleSuccess(message);
+            setTimeout(() => {
               navigate("/");
-          
+            }, 1000);
+
           } else {
             handleError(message);
           }
@@ -86,7 +88,10 @@ const Login = () => {
 
               <button type="submit">Submit</button>
         <span>
-          Already have an account? <Link to={"/signup"}>Signup</Link>
+          New to Zerodha? <Link to={"/signup"}>Signup</Link>
+        </span>
+        <span>
+          <Link to={"/"}>Back to Home</Link>
         </span>
       </form>
       <ToastContainer />
