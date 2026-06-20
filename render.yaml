@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: zerodha-frontend
-    env: node
-    buildCommand: npm install && npm run build
-    startCommand: npx serve -s build
