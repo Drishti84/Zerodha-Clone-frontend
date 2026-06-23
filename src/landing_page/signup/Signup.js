@@ -40,10 +40,11 @@ const Signup = () => {
         },
         { withCredentials: true }
       );
-      const { success, message } = data;
+      const { success, message, token } = data;
       if (success) {
         handleSuccess(message);
         document.cookie = "isLoggedIn=true; path=/; max-age=604800; SameSite=Lax";
+        if (token) localStorage.setItem("authToken", token);
         navigate("/");
       } else {
         handleError(message);
